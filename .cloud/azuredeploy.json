@@ -62,6 +62,9 @@
                 "properties":
                 {
                     "vmSize" : "[parameters('vmSize')]"
+                    "subnet" : "null",
+                    "sshSettings" : "null"
+
                 }
             }
         },
