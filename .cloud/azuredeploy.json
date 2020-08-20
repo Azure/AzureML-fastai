@@ -8,6 +8,13 @@
                 "description": "Specifies the name of the Azure Machine Learning Workspace which will contain this compute."
             }
         },
+        "instanceName": {
+            "defaultValue": "interactive-ci",
+            "type": "string",
+            "metadata": {
+                "description": "Specifies the name of the Azure Machine Learning interactive compute instance."
+            }
+        },
         "clusterName": {
             "defaultValue": "gpu-large",
             "type": "string",
