@@ -4,7 +4,7 @@ This repository has examples showing you how to use FastAI on Azure ML.
 # Create an ML workspace
 The [Azure Machine Learning workspace](concept-workspace.md) is the top-level resource for the service. It provides you with a centralized place to work with all the artifacts you create. 
 
-You can create an ML workspace by clicking here - **be sure to change SKU type to a GPU SKU, recommended is "Standard_NC12"**:
+You can create an ML workspace by clicking here - **specify a unique resource group name for your Azure subscription!**:
 
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzureML-fastai%2Fmain%2F.cloud%2Fazuredeploy.json)
 
