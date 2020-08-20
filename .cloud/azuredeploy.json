@@ -126,7 +126,7 @@
         {
             "type": "Microsoft.MachineLearningServices/workspaces/computes",
             "apiVersion": "2020-06-01",
-            "name": "[concat(parameters('workspaceName'), '/', 'c', substring(guid(resourceGroup().id), 0, 16), 'i')]",
+            "name": "[concat(parameters('workspaceName'), '/civm', uniqueString(resourceGroup().id))]",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "[parameters('workspaceName')]"
