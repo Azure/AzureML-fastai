@@ -1,31 +1,12 @@
----
-title: Train a model using a FastAI docker image
-titleSuffix: Azure Machine Learning
-description: Learn how to train models with custom Docker images in Azure Machine Learning.
-services: machine-learning
-ms.service: machine-learning
-ms.subservice: core
-ms.author: sagopal
-author: saachigopal
-ms.date: 08/11/2020
-ms.topic: conceptual
-ms.custom: how-to
----
-
-# Train a FastAI model using Azure Machine Learning
-In this article, learn how to train a FastAI model with Azure Machine Learning. 
-
-The example scripts in this article are used to classify pet images by creating a convolutional neural network. 
-
-While Azure Machine Learning provides a default Docker base image, you can also use Azure Machine Learning environments to specify a specific base image, such as one of the set of maintained [Azure ML base images](https://github.com/Azure/AzureML-Containers) or your own [custom image](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-custom-docker-image#create-a-custom-base-image). In this case, we have added 
-
-### Create an ML workspace
+# Create an ML workspace
 The [Azure Machine Learning workspace](concept-workspace.md) is the top-level resource for the service. It provides you with a centralized place to work with all the artifacts you create. 
 
-You can create an ML workspace by clicking here.
+You can create an ML workspace by clicking here:
+
+[![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F100-marketplace-sample%2Fazuredeploy.json)
 
 
-### Work interactively
+# Work interactively
 Create a compute instance. https://docs.microsoft.com/en-us/azure/machine-learning/concept-compute-instance#create
 
 In the first notebook cell, run:
@@ -40,10 +21,12 @@ In the second notebook cell, run:
 !git clone https://github.com/fastai/course-v3.git
 ```
 
-### Prepare scripts
+# Submit remote jobs
+
+## Prepare scripts
 For this tutorial, the training script **train.py** is provided [here](). In practice, you can take any custom training script, as is, and run it with Azure Machine Learning.
 
-### Define the FastAI environment
+## Define the FastAI environment
 Create an environment object and enable Docker. 
 
 ```python
@@ -54,7 +37,7 @@ fastai_env.docker.base_image = "fastdotai/fastai2:latest"
 fastai_env.python.user_managed_dependencies = True
 ```
 
-### Submit a script run
+## Submit a script run
 This ScriptRunConfig will configure your job for execution on the desired [compute target](https://docs.microsoft.com/azure/machine-learning/how-to-set-up-training-targets#compute-targets-for-training).
 
 ```python
