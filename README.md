@@ -9,7 +9,8 @@ You can create an ML workspace by clicking here - **be sure to change SKU type t
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzureML-fastai%2Fmain%2F.cloud%2Fazuredeploy.json)
 
 # Work interactively
-Create a compute instance. https://docs.microsoft.com/en-us/azure/machine-learning/concept-compute-instance#create
+Go to the Azure ML studio (https://ml.azure.com) and find your ML workspace.
+Click into "Notebooks" on the left and create a new Untitled notebook.
 
 In the first notebook cell, run:
 
@@ -22,6 +23,8 @@ In the second notebook cell, run:
 ```
 !git clone https://github.com/fastai/course-v3.git
 ```
+
+All of the notebook samples should now be cloned and ready to run.
 
 # Submit remote jobs
 
