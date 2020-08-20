@@ -10,21 +10,21 @@
             }
         },
         "keyVaultName": {
-            "defaultValue": "kvfastaiworkspace",
+            "defaultValue": "kv[substring(guid(resourceGroup().id), 0, 8)]",
             "type": "String",
             "metadata": {
                 "description": "Specifies the name of the Azure keyvault to create."
             }
         },
         "storageAccountName": {
-            "defaultValue": "stfastaiworkspace",
+            "defaultValue": "st[substring(guid(resourceGroup().id), 0, 8)]",
             "type": "String",
             "metadata": {
                 "description": "Specifies the name of the Azure storage account to create."
             }
         },
         "applicationInsightsName": {
-            "defaultValue": "monfastaiworkspace",
+            "defaultValue": "ai[substring(guid(resourceGroup().id), 0, 8)]",
             "type": "String",
             "metadata": {
                 "description": "Specifies the name of the Azure app insights account to create."
@@ -42,20 +42,6 @@
             "type": "String",
             "metadata": {
                 "description": "Specifies the SKU size for interactive and remote compute."
-            }
-        },
-        "instanceName": {
-            "defaultValue": "mycomputeinstance",
-            "type": "String",
-            "metadata": {
-                "description": "Specifies the location for all resources."
-            }
-        },
-        "clusterName": {
-            "defaultValue": "gpucluster",
-            "type": "String",
-            "metadata": {
-                "description": "Specifies the location for all resources."
             }
         }
     },
@@ -155,7 +141,7 @@
         {
             "type": "Microsoft.MachineLearningServices/workspaces/computes",
             "apiVersion": "2018-11-19",
-            "name": "[concat(parameters('workspaceName'), '/', parameters('clusterName'))]",
+            "name": "[concat(parameters('workspaceName'), '/gpucluster')]",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "[parameters('workspaceName')]"
