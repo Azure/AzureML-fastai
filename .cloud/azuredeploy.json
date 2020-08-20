@@ -10,21 +10,21 @@
             }
         },
         "keyVaultName": {
-            "defaultValue": "kv[substring(guid(resourceGroup().id), 0, 8)]",
+            "defaultValue": "[concat('kv', uniqueString(resourceGroup().id))]",
             "type": "String",
             "metadata": {
                 "description": "Specifies the name of the Azure keyvault to create."
             }
         },
         "storageAccountName": {
-            "defaultValue": "st[substring(guid(resourceGroup().id), 0, 8)]",
+            "defaultValue": "[concat('storage', uniqueString(resourceGroup().id))]",
             "type": "String",
             "metadata": {
                 "description": "Specifies the name of the Azure storage account to create."
             }
         },
         "applicationInsightsName": {
-            "defaultValue": "ai[substring(guid(resourceGroup().id), 0, 8)]",
+            "defaultValue": "[concat('ai', uniqueString(resourceGroup().id))]",
             "type": "String",
             "metadata": {
                 "description": "Specifies the name of the Azure app insights account to create."
