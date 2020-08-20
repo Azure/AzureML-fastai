@@ -44,7 +44,22 @@
             }
         }
     },
-    "resources": [
+    "resources": [  
+        {
+            "type": "Microsoft.MachineLearningServices/workspaces/computes",
+            "name": "[concat(parameters('workspaceName'), '/', parameters('instanceName'))]",
+            "apiVersion": "2020-06-01",
+            "location" : "[parameters('location')]",
+            "properties": {
+                "computeType": "ComputeInstance",
+                "properties":
+                {
+                    "vmSize" : "[parameters('vmSize')]",
+                    "subnet" : "[if(and(not(empty(parameters('vnetResourceGroupName'))),not(empty(parameters('vnetName'))),not(empty(parameters('subnetName')))), variables('subnet'), json('null'))]",
+                    "sshSettings" : "[if(equals(parameters('sshPublicAccess'), 'Enabled'), variables('sshSettings'), json('null'))]"
+                }
+            }
+        },
         {
             "type": "Microsoft.MachineLearningServices/workspaces/computes",
             "name": "[concat(parameters('workspaceName'), '/', parameters('clusterName'))]",
