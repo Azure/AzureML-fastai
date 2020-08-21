@@ -15,16 +15,16 @@ Click into "Notebooks" on the left and create a new Untitled notebook.
 In the first notebook cell, run:
 
 ```python
-!pip install fastai
+!echo 'y' | conda install -c fastai -c pytorch fastai2
 ```
 
 In the second notebook cell, run:
 
 ```
-!git clone https://github.com/fastai/course-v3.git
+!git clone https://github.com/fastai/fastbook.git
 ```
 
-All of the notebook samples should now be cloned and ready to run.
+All of the notebook samples should now be cloned into the fastbook folder and ready to run!
 
 # Submit remote jobs
 
