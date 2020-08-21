@@ -10,19 +10,15 @@ You can create an ML workspace by clicking here - **specify a unique resource gr
 
 # Work interactively
 Go to the Azure ML studio (https://ml.azure.com) and find your ML workspace.
-Click into "Notebooks" on the left and create a new Untitled notebook.
 
-In the first notebook cell, run:
-
-```python
-!echo 'y' | conda install -c fastai -c pytorch fastai2
+In a terminal window or new notebook, run the following commands:
+```shell
+conda create --name fastaienv
+conda activate fastaienv
+conda install -c fastai -c pytorch fastai2
+git clone https://github.com/fastai/fastbook.git
 ```
 
-In the second notebook cell, run:
-
-```
-!git clone https://github.com/fastai/fastbook.git
-```
 
 All of the notebook samples should now be cloned into the fastbook folder and ready to run!
 
