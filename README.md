@@ -8,24 +8,24 @@ You can create an ML workspace by clicking here - **specify a unique resource gr
 
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzureML-fastai%2Fmain%2F.cloud%2Fazuredeploy.json)
 
-# Work interactively
+# Setup FastAI Environment
 Go to the Azure ML studio (https://ml.azure.com) and find your ML workspace.
 
-Use the terminal window to create a new environment. For example, the code below creates fastaienv:
-```shell
-conda create --name fastaienv
-```
+Open the terminal window in Azure ML studio:
+![Open Terminal](images/open_terminal.png)
 
-Activate the environment. For example, after creating  fastaienv:
+Use the terminal window to create a new environment. For example, the code below creates fastaienv and activate the environment:
 ```shell
+echo "y" | conda create --name fastaienv
 conda activate fastaienv
 ```
 
-Install fastai2, pip and ipykernel package to the new environment and create a kernel for that conda env:
+Install fastai, nbdev, pip and ipykernel package to the new environment and create a kernel for that conda env:
 ```shell
-conda install pip
-conda install ipykernel
-conda install -c fastai -c pytorch fastai2
+echo "y" | conda install pip
+echo "y" | conda install ipykernel
+echo "y" | conda install -c fastai -c pytorch fastai
+echo "y" | conda install -c fastai nbdev
 ```
 
 Create a kernel for that conda env:
@@ -33,12 +33,23 @@ Create a kernel for that conda env:
 python -m ipykernel install --user --name fastaienv --display-name "Python (fastaienv)"
 ```
 
-In a terminal window or new notebook, run the following commands:
+Clone the [Fast AI Repo](https://github.com/fastai/fastai) with below snippet:
 ```shell
-https://github.com/fastai/fastai.git
+git clone https://github.com/fastai/fastai.git
 ```
 
 All of the notebook samples should now be cloned into the fastai folder and ready to run!
+
+Refresh File Explorer to see all new files.
+![Refresh File Explorer](images/refresh_file_explorer.png)
+
+# Running FastAI Notebooks
+1) Open a notebook in `fastai/nbs` you just cloned
+![Open Notebooks](images/opennotebooks.png)
+2) Select the `Python (fastaienv)` Kernel
+![Fast AI Kernel](images/select_fastaikernel.png)
+3) Run all cells in Notebook
+![Run All](images/run_all.png)
 
 
 # Contributing
