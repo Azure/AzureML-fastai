@@ -1,6 +1,6 @@
 #!/bin/bash
 git clone https://github.com/fastai/fastai.git
-conda create -y --name fastaienv python=3.7
+conda create -y --name fastaienv
 source /etc/profile.d/conda.sh
 conda activate fastaienv
 conda install -y pip
