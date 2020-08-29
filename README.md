@@ -8,46 +8,57 @@ You can create an ML workspace by clicking here - **specify a unique resource gr
 
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzureML-fastai%2Fmain%2F.cloud%2Fazuredeploy.json)
 
-# Setup FastAI Environment
+# Quick FastAI Environment setup
 1) Go to the Azure ML studio (https://ml.azure.com) and find your ML workspace.
 
 2) Open the terminal window in Azure ML studio:
 
 ![Open Terminal](images/open_terminal.png)
 
-3) Use the terminal window to create a new environment. For example, the code below creates fastaienv and activate the environment:
 > **PRO-TIP: Copy and Paste in Terminal**
 > * Windows: `Ctrl-c` to copy is supported but use `Shift-insert` to paste.
 > * FireFox/IE may not support clipboard permissions properly.
 > *    Mac OS: `Cmd-c` to copy and `Cmd-v` to paste.
 
+3) Copy the following command to clipboard:
 ```shell
-echo "y" | conda create --name fastaienv
-conda activate fastaienv
-```
-
-4) Install fastai, nbdev, pip and ipykernel package to the new environment and create a kernel for that conda env:
-```shell
-echo "y" | conda install pip
-echo "y" | conda install ipykernel
-echo "y" | conda install -c fastai -c pytorch fastai
-echo "y" | conda install -c fastai nbdev
+wget https://raw.githubusercontent.com/AbeOmor/AzureML-fastai/master/fastaionAMLCI.sh
+bash fastaionAMLCI.sh
 ```
 If you don't already have fastai, then you have to wait for the libraries and dependencies to install. Wait up to 10 mins for this to complete and continue to the next step.
 
-5) Create a kernel for that conda env:
+4) If you didn't run into any errors, proceed to [Running FastAI Notebook section](#Running-FastAI-Notebooks)
+
+# Manual FastAI Environment Setup
+1) Use the terminal window to create a new environment. For example, the code below creates fastaienv and activate the environment:
+
+```shell
+conda create -y --name fastaienv
+conda activate fastaienv
+```
+
+2) Install fastai, nbdev, pip and ipykernel package to the new environment and create a kernel for that conda env:
+```shell
+conda install -y pip
+conda install -y ipykernel
+conda install -y -c fastai -c pytorch fastai
+conda install -y -c fastai nbdev
+```
+If you don't already have fastai, then you have to wait for the libraries and dependencies to install. Wait up to 10 mins for this to complete and continue to the next step.
+
+3) Create a kernel for that conda env:
 ```shell
 python -m ipykernel install --user --name fastaienv --display-name "Python (fastaienv)"
 ```
 
-6) Clone the [Fast AI Repo](https://github.com/fastai/fastai) with below snippet:
+4) Clone the [Fast AI Repo](https://github.com/fastai/fastai) with below snippet:
 ```shell
 git clone https://github.com/fastai/fastai.git
 ```
 
 All of the notebook samples should now be cloned into the fastai folder and ready to run!
 
-7) Refresh File Explorer to see all new files.
+5) Refresh File Explorer to see all new files.
 
 ![Refresh File Explorer](images/refresh_file_explorer.png)
 
