@@ -11,46 +11,34 @@ You can create an ML workspace by clicking here - **specify a unique resource gr
 # Work interactively
 Go to the Azure ML studio (https://ml.azure.com) and find your ML workspace.
 
-In a terminal window or new notebook, run the following commands:
+Use the terminal window to create a new environment. For example, the code below creates fastaienv:
 ```shell
 conda create --name fastaienv
+```
+
+Activate the environment. For example, after creating  fastaienv:
+```shell
 conda activate fastaienv
+```
+
+Install fastai2, pip and ipykernel package to the new environment and create a kernel for that conda env:
+```shell
+conda install pip
+conda install ipykernel
 conda install -c fastai -c pytorch fastai2
-git clone https://github.com/fastai/fastbook.git
 ```
 
-
-All of the notebook samples should now be cloned into the fastbook folder and ready to run!
-
-# Submit remote jobs
-
-## Prepare scripts
-For this tutorial, the training script **train.py** is provided [here](). In practice, you can take any custom training script, as is, and run it with Azure Machine Learning.
-
-## Define the FastAI environment
-Create an environment object and enable Docker. 
-
-```python
-from azureml.core import Environment
-fastai_env = Environment("fastai2")
-fastai_env.docker.enabled = True
-fastai_env.docker.base_image = "fastdotai/fastai2:latest"
-fastai_env.python.user_managed_dependencies = True
+Create a kernel for that conda env:
+```shell
+python -m ipykernel install --user --name fastaienv --display-name "Python (fastaienv)"
 ```
 
-## Submit a script run
-This ScriptRunConfig will configure your job for execution on the desired [compute target](https://docs.microsoft.com/azure/machine-learning/how-to-set-up-training-targets#compute-targets-for-training).
-
-```python
-from azureml.core import ScriptRunConfig, Experiment, Workspace
-
-ws = Workspace.from_config()
-
-fastai_config = ScriptRunConfig(source_directory='fastai-example', script='train.py')
-fastai_config.run_config.environment = fastai_env
-run = Experiment(ws,'fastai-custom-image').submit(fastai_config)
-run.wait_for_completion(show_output=True)
+In a terminal window or new notebook, run the following commands:
+```shell
+https://github.com/fastai/fastai.git
 ```
+
+All of the notebook samples should now be cloned into the fastai folder and ready to run!
 
 
 # Contributing
@@ -66,7 +54,3 @@ provided by the bot. You will only need to do this once across all repos using o
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-
-### Submit a notebook run
-Coming soon!
