@@ -22,7 +22,7 @@ You can create an ML workspace by clicking here - **specify a unique resource gr
 
 3) Copy the following command to clipboard:
 ```shell
-wget https://raw.githubusercontent.com/AbeOmor/AzureML-fastai/master/fastaionAMLCI.sh
+wget https://raw.githubusercontent.com/AbeOmor/AzureML-fastai/main/fastaionAMLCI.sh
 bash fastaionAMLCI.sh
 ```
 If you don't already have fastai, then you have to wait for the libraries and dependencies to install. Wait up to 10 mins for this to complete and continue to the next step.
