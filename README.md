@@ -8,7 +8,7 @@ You can create an ML workspace by clicking here - **specify a unique resource gr
 
 [![Deploy To Azure](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.svg?sanitize=true)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2FAzureML-fastai%2Fmain%2F.cloud%2Fazuredeploy.json)
 
-More details about deployment in the button used above, Check out [ARM JSON definition](https://github.com/AbeOmor/AzureML-fastai/blob/main/.cloud/azuredeploy.json) and [Azure Machine Learning Compute Sizes](https://docs.microsoft.com/en-us/rest/api/azureml/workspacesandcomputes/virtualmachinesizes/list)
+More details about deployment in the button used above, Check out [ARM JSON definition](https://github.com/AbeOmor/AzureML-fastai/blob/main/.cloud/azuredeploy.json) and [Azure Machine Learning VM sizes](https://docs.microsoft.com/en-us/rest/api/azureml/workspacesandcomputes/virtualmachinesizes/list)
 
 # Quick FastAI Environment setup
 1) Go to the Azure ML studio (https://ml.azure.com) and find your ML workspace.
