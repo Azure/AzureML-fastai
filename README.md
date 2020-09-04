@@ -13,23 +13,29 @@ More details about deployment in the button used above, Check out [ARM JSON defi
 # Quick FastAI Environment setup
 1) Go to the Azure ML studio (https://ml.azure.com) and find your ML workspace.
 
-2) Open the terminal window in Azure ML studio:
+2) On the left side, select **Notebooks**. Select any notebook located in the User files section on the left-hand side. If you don't have any notebooks there, first **create a notebook**
 
-![Open Terminal](images/open_terminal.png)
+![Notebook](images/click_notebook.png)
+
+3) Select the Open terminal icon.
+![Open Terminal](images/open_terminal_full.png)
+
+4) If you don't see the icon, select the ... to the right of the compute target and then select Open terminal .
+![Open Terminal Mini](images/open_terminal.png)
 
 > **PRO-TIP: Copy and Paste in Terminal**
 > * Windows: `Ctrl-c` to copy is supported but use `Shift-insert` to paste.
 > * FireFox/IE may not support clipboard permissions properly.
 > *    Mac OS: `Cmd-c` to copy and `Cmd-v` to paste.
 
-3) Copy the following command to clipboard:
+5) Copy the following command to clipboard:
 ```shell
 wget https://raw.githubusercontent.com/AbeOmor/AzureML-fastai/main/fastaionAMLCI.sh
 bash fastaionAMLCI.sh
 ```
 If you don't already have fastai, then you have to wait for the libraries and dependencies to install. Wait up to 10 mins for this to complete and continue to the next step.
 
-4) If you didn't run into any errors, proceed to [Running FastAI Notebook section](#Running-FastAI-Notebooks)
+6) If you didn't run into any errors, proceed to [Running FastAI Notebook section](#Running-FastAI-Notebooks)
 
 # Manual FastAI Environment Setup
 1) Use the terminal window to create a new environment. For example, the code below creates fastaienv and activate the environment:
