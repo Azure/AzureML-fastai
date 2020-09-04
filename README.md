@@ -33,9 +33,16 @@ More details about deployment in the button used above, Check out [ARM JSON defi
 wget https://raw.githubusercontent.com/AbeOmor/AzureML-fastai/main/fastaionAMLCI.sh
 bash fastaionAMLCI.sh
 ```
-If you don't already have fastai, then you have to wait for the libraries and dependencies to install. Wait up to 10 mins for this to complete and continue to the next step.
+If you don't already have fastai, then you have to wait for the libraries and dependencies to install. **Wait up to 10 mins** for this to complete and continue to the next step.
 
-6) If you didn't run into any errors, proceed to [Running FastAI Notebook section](#Running-FastAI-Notebooks)
+All of the notebook samples should now be cloned into the fastai folder and ready to run!
+
+6) Refresh File Explorer to see all new files.
+
+![Refresh File Explorer](images/refresh_file_explorer.png)
+
+
+7) If you didn't run into any errors, proceed to [Running FastAI Notebook section](#Running-FastAI-Notebooks)
 
 # Manual FastAI Environment Setup
 1) Use the terminal window to create a new environment. For example, the code below creates fastaienv and activate the environment:
