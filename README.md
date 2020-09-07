@@ -30,7 +30,7 @@ More details about deployment in the button used above, Check out [ARM JSON defi
 
 5) Copy the following command to clipboard:
 ```shell
-wget https://raw.githubusercontent.com/AbeOmor/AzureML-fastai/main/fastaionAMLCI.sh
+wget https://raw.githubusercontent.com/Azure/AzureML-fastai/main/fastaionAMLCI.sh
 bash fastaionAMLCI.sh
 ```
 If you don't already have fastai, then you have to wait for the libraries and dependencies to install. **Wait up to 10 mins** for this to complete and continue to the next step.
