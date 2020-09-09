@@ -57,6 +57,7 @@ conda activate fastaienv
 conda install -y pip
 conda install -y ipykernel
 conda install -y -c fastai -c pytorch fastai
+conda install -y -c fastai fastbook
 conda install -y -c fastai nbdev
 ```
 If you don't already have fastai, then you have to wait for the libraries and dependencies to install. Wait up to 10 mins for this to complete and continue to the next step.
