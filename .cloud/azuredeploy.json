@@ -38,7 +38,7 @@
             }
         },
         "vmSize": {
-            "defaultValue": "Standard_NC6",
+            "defaultValue": "Standard_D2_V2",
             "type": "String",
             "metadata": {
                 "description": "Specifies the SKU size for interactive and remote compute."
